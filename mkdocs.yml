@@ -1,0 +1,31 @@
+site_name: Minzord
+site_url: https://minzord.fr
+repo_url: https://github.com/minzords/Wiki
+theme:
+  name: cinder
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - php
+    - bash
+  disable_nav_search: true
+  disable_footer: true
+nav:
+  - Système:
+    - Linux / BSD: 'UNIX.md'
+    - Windows: 'Windows.md'
+  - Réseau:
+    - Cisco: 'Cisco.md'
+  - Développement:
+    - PHP:
+        - Laravel: 'Laravel.md'
+        - Symfony: 'Symfony.md'
+    - C#: 'CSharp.md'
+    - Javascript: 'Javascript.md'
+    - Git: 'GIT.md'
+  - DevOps:  
+    - Kubernetes: 'Kubernetes.md'
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
