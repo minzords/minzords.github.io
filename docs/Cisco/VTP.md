@@ -1,39 +1,32 @@
----
-title: Configuration de VTP
-description: 
-published: true
-date: 2022-01-13T16:37:20.574Z
-tags: 
-editor: markdown
-dateCreated: 2022-01-13T16:37:20.574Z
----
+# Configuration du VTP
 
-# Mode serveur
+## Mode serveur
 ***Le domaine:***
-> server(config)# vtp domain testVTP
+`server(config)# vtp domain testVTP`
 
 ***Definir le mode:***
-> server(config)# vtp mode server
+`server(config)# vtp mode server`
 
 ***Mettre un mots de passe (optionnel)***
-> server(config)# VTP password azerty
+`server(config)# VTP password azerty`
 
-# Mode client
+## Mode client
 ***Le domaine:***
-> server(config)# vtp domain testVTP
+`server(config)# vtp domain testVTP`
 
 ***Definir le mode:***
-> client (config)# vtp mode client
-> client (config)# vtp mode transparent
-
+```
+client(config)# vtp mode client
+client(config)# vtp mode transparent
+```
 ***Mettre un mots de passe (optionnel)***
-> client (config)#vtp password azerty
+`client (config)#vtp password azerty`
 
-# Verification de la configuration
-> server# show vtp status
+## Verification de la configuration
+`server# show vtp status`
 
-# Changement de la version
-> vtp version 2
+## Changement de la version
+`vtp version 2`
 
 # Configuration du Protocole DTP
 > Switch_A(config)# interface fastethernet 0/1

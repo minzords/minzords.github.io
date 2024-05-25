@@ -1,14 +1,6 @@
----
-title: Installation d'un DNS Avec Bind
-description: 
-published: true
-date: 2023-04-15T18:48:43.655Z
-tags: 
-editor: markdown
-dateCreated: 2022-09-20T08:04:33.388Z
----
+# Installation d'un DNS avec Bind
 
-# Déclaration des zones:
+## Déclaration des zones:
 `vi /etc/bind/named.conf.local`
 
 ```
@@ -27,7 +19,7 @@ zone "1.0.10.in-addr.arpa" {
 };
 ```
 
-# Création des zones:
+## Création des zones:
 `vi /var/cache/bind/db.mandriva.com`
 ```
 $TTL    86400
@@ -47,7 +39,7 @@ ns2		IN	A			10.0.1.3
 www		IN	CNAME	mandriva.com.
 ```
 
-## Zone inverser
+### Zone inverser
 `vi /var/cache/bind/db.10.0.1.0.rev`
 
 ```
@@ -67,7 +59,7 @@ $TTL    86400
 3			IN	PTR		ns2.mandriva.com.
 ```
 
-# Mises en place du Forward
+## Mises en place du Forward
 `vi /etc/bind/named.conf.options`
 
 ```
@@ -107,5 +99,5 @@ zone "1.0.10.in-addr.arpa" {
 `mkdir /var/cache/bind/slave`
 `chown -R bind:bind /var/cache/bind/slave`
 
-## Commande de Debug
+### Commande de Debug
 `named -g`
