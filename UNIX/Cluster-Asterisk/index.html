@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://minzord.fr/UNIX/Cluster-Asterisk/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Installation de Corosync &amp; Pacemaker - Minzord</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Minzord</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Système <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../">Linux / BSD</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Windows/">Windows</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseau <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Cisco/">Cisco</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Développement <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">PHP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../Laravel/">Laravel</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../Symfony/">Symfony</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../CSharp/">C#</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Javascript/">Javascript</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../GIT/">Git</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Kubernetes/">Kubernetes</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/UNIX/Cluster-Asterisk.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#installation-de-corosync-pacemaker">Installation de Corosync &amp; Pacemaker</a></li>
+        <li class="first-level "><a href="#generer-la-cle">Générer la clé</a></li>
+        <li class="first-level "><a href="#configuration-de-corosync">configuration de Corosync</a></li>
+            <li class="second-level"><a href="#voir-letat-des-noeuds">Voir l'état des noeuds.</a></li>
+                
+        <li class="first-level "><a href="#desactivation-du-quorum">Désactivation du Quorum</a></li>
+        <li class="first-level "><a href="#mises-en-place-de-lipfailover">Mises en place de l'IPFailover</a></li>
+        <li class="first-level "><a href="#configuration-de-la-ressource-asterisk">Configuration de la ressource Asterisk</a></li>
+        <li class="first-level "><a href="#creation-du-groupe-asterisk-ipfailover-asterisk">Création du groupe Asterisk (IPFailOver + Asterisk)</a></li>
+        <li class="first-level "><a href="#definir-la-preference-sur-serv1">Definir la préference sur serv1</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="installation-de-corosync-pacemaker">Installation de Corosync &amp; Pacemaker<a class="headerlink" href="#installation-de-corosync-pacemaker" title="Permanent link">&para;</a></h1>
+<pre><code>apt install corosync pacemaker crmsh
+</code></pre>
+<h1 id="generer-la-cle">Générer la clé<a class="headerlink" href="#generer-la-cle" title="Permanent link">&para;</a></h1>
+<pre><code>corosync-keygen
+</code></pre>
+<p>La clé se trouve ici : /etc/corosync/authkey, il faut qu'elle soit sur tous les nœuds.</p>
+<h1 id="configuration-de-corosync">configuration de Corosync<a class="headerlink" href="#configuration-de-corosync" title="Permanent link">&para;</a></h1>
+<pre><code>vi /etc/corosync/corosync.conf
+</code></pre>
+<pre><code>totem {
+    version: 2
+    cluster_name: asterisk
+    crypto_cipher: aes256
+    crypto_hash: sha1
+    clear_node_high_bit:yes
+}
+
+logging {
+    fileline: off
+    to_logfile: yes
+    logfile: /var/log/corosync/corosync.log
+    to_syslog: no
+    debug: off
+    timestamp: on
+    logger_subsys {
+        subsys: QUORUM
+        debug: off
+    }
+}
+quorum {
+    provider: corosync_votequorum
+    expected_votes: 2
+    two_nodes: 1
+}
+nodelist {
+    node {
+        name: serv1
+        nodeid: 1
+        ring0_addr: 10.0.2.20
+    }
+    node {
+        name: serv2
+        nodeid: 2
+        ring0_addr: 10.0.2.21
+    }
+}
+service {
+    ver: 0
+    name: pacemaker
+}
+</code></pre>
+<pre><code>systemctl restart corosync pacemaker
+</code></pre>
+<h2 id="voir-letat-des-noeuds">Voir l'état des noeuds.<a class="headerlink" href="#voir-letat-des-noeuds" title="Permanent link">&para;</a></h2>
+<pre><code>crm status
+</code></pre>
+<h1 id="desactivation-du-quorum">Désactivation du Quorum<a class="headerlink" href="#desactivation-du-quorum" title="Permanent link">&para;</a></h1>
+<pre><code>crm configure property stonith-enabled=false
+</code></pre>
+<pre><code>crm configure property no-quorum-policy=ignore
+</code></pre>
+<h1 id="mises-en-place-de-lipfailover">Mises en place de l'IPFailover<a class="headerlink" href="#mises-en-place-de-lipfailover" title="Permanent link">&para;</a></h1>
+<pre><code>crm configure primitive IPFailover ocf:heartbeat:IPaddr2 params ip=10.0.2.23 cidr_netmask=24 nic=eth0 iflabel=VIP op monitor interval=&quot;30s&quot; timeout=&quot;20s&quot;
+</code></pre>
+<h1 id="configuration-de-la-ressource-asterisk">Configuration de la ressource Asterisk<a class="headerlink" href="#configuration-de-la-ressource-asterisk" title="Permanent link">&para;</a></h1>
+<pre><code>crm configure primitive asterisk systemd:asterisk.service op monitor interval=30s
+</code></pre>
+<h1 id="creation-du-groupe-asterisk-ipfailover-asterisk">Création du groupe Asterisk (IPFailOver + Asterisk)<a class="headerlink" href="#creation-du-groupe-asterisk-ipfailover-asterisk" title="Permanent link">&para;</a></h1>
+<pre><code>crm configure group servasterisk IPFailover asterisk meta migration-threshold=&quot;5&quot;
+</code></pre>
+<h1 id="definir-la-preference-sur-serv1">Definir la préference sur serv1<a class="headerlink" href="#definir-la-preference-sur-serv1" title="Permanent link">&para;</a></h1>
+<pre><code>crm configure location cli-prefer-ServAsterisk servasterisk role=Started inf: serv1
+</code></pre></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/php.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/bash.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

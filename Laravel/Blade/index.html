@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://minzord.fr/Laravel/Blade/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Introduction à Blade - Minzord</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Minzord</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Système <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../UNIX/">Linux / BSD</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Windows/">Windows</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseau <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Cisco/">Cisco</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Développement <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">PHP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../">Laravel</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../Symfony/">Symfony</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../CSharp/">C#</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Javascript/">Javascript</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../GIT/">Git</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Kubernetes/">Kubernetes</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/Laravel/Blade.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#separation-du-contenu-de-la-vue">Séparation du contenu de la vue</a></li>
+            <li class="second-level"><a href="#creation-de-la-page-de-base-qui-sera-inclus">Création de la page de base qui sera inclus</a></li>
+                
+            <li class="second-level"><a href="#creation-de-la-page-qui-va-inclure-la-base">Création de la page qui va inclure la base</a></li>
+                
+            <li class="second-level"><a href="#inclure-une-vue-dans-la-vue-de-base">Inclure une vue dans la vue de base.</a></li>
+                
+        <li class="first-level "><a href="#les-conditions-de-base">Les conditions de base</a></li>
+            <li class="second-level"><a href="#le-if">Le IF</a></li>
+                
+            <li class="second-level"><a href="#le-switch">Le Switch</a></li>
+                
+            <li class="second-level"><a href="#le-foreach">Le Foreach</a></li>
+                
+                <li class="third-level"><a href="#options-disponibles">Options disponibles</a></li>
+            <li class="second-level"><a href="#le-for">Le For</a></li>
+                
+            <li class="second-level"><a href="#le-while">Le while</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="separation-du-contenu-de-la-vue">Séparation du contenu de la vue<a class="headerlink" href="#separation-du-contenu-de-la-vue" title="Permanent link">&para;</a></h1>
+<p>Il est souvent très pratique de mettre dans un fichier séparer certains éléments qui ne changent jamais comme la navbar et le footer, et de simplement inclure ce fichier sur chaque page.</p>
+<p>Dans cet exemple, je vais créer un sous dossier dans views qui se nomme layouts qui va contenir les pages de base à inclure.</p>
+<h2 id="creation-de-la-page-de-base-qui-sera-inclus">Création de la page de base qui sera inclus<a class="headerlink" href="#creation-de-la-page-de-base-qui-sera-inclus" title="Permanent link">&para;</a></h2>
+<p>Le fichier se nomme <strong>app.blade.php</strong> (resources/views/layouts/app.blade.php)</p>
+<pre><code class="language-php">    &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;{{ $title}} | Laravel&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    @yield ('content')
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>@yield ('content')</strong> va definir l'endroit où l'on va injecter le contenu de la section 'content'</p>
+<h2 id="creation-de-la-page-qui-va-inclure-la-base">Création de la page qui va inclure la base<a class="headerlink" href="#creation-de-la-page-qui-va-inclure-la-base" title="Permanent link">&para;</a></h2>
+<p>Voici le contenu de la page <strong>accueil</strong> (resources/views/accueil.blade.php).</p>
+<pre><code class="language-php">  @extends ('layouts.app')
+
+  @section ('content')
+  &lt;h1&gt;{{ $title }}&lt;/h1&gt;
+  @endsection
+</code></pre>
+<p><strong>@extends ('layouts.app')</strong> : on inclut la vue layouts/app.blade.php.</p>
+<p><strong>@section ('content')</strong> : On définit la section content qui est le contenu qui change de la vue app.blade.php. </p>
+<p><strong>@endsection</strong> : fin de la section content.</p>
+<h2 id="inclure-une-vue-dans-la-vue-de-base">Inclure une vue dans la vue de base.<a class="headerlink" href="#inclure-une-vue-dans-la-vue-de-base" title="Permanent link">&para;</a></h2>
+<pre><code class="language-php">    &lt;body&gt;
+    @include ('partials.navbar')
+    @yield ('content')
+&lt;/body&gt;
+</code></pre>
+<p><strong>@include ('partials.navbar')</strong> : va inclure la vue <strong>layouts/partials/navbar.blade.php</strong></p>
+<h1 id="les-conditions-de-base">Les conditions de base<a class="headerlink" href="#les-conditions-de-base" title="Permanent link">&para;</a></h1>
+<h2 id="le-if">Le IF<a class="headerlink" href="#le-if" title="Permanent link">&para;</a></h2>
+<pre><code class="language-php">    @if (count($records) === 1)
+    Cas 1
+    @elseif (count($records) &gt; 1)
+    Cas 2
+    @else
+    Cas 3
+@endif
+</code></pre>
+<h2 id="le-switch">Le Switch<a class="headerlink" href="#le-switch" title="Permanent link">&para;</a></h2>
+<pre><code class="language-php">    @switch($i)
+    @case(1)
+        First case...
+        @break
+
+    @case(2)
+        Second case...
+        @break
+
+    @default
+        Default case...
+    @endswitch
+</code></pre>
+<h2 id="le-foreach">Le Foreach<a class="headerlink" href="#le-foreach" title="Permanent link">&para;</a></h2>
+<pre><code class="language-php">    @foreach ($users as $user)
+    &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+    @endforeach
+</code></pre>
+<h3 id="options-disponibles">Options disponibles<a class="headerlink" href="#options-disponibles" title="Permanent link">&para;</a></h3>
+<pre><code class="language-php">    @continue($user-&gt;type == 1)
+</code></pre>
+<pre><code class="language-php">    @break($user-&gt;number == 5)
+</code></pre>
+<h2 id="le-for">Le For<a class="headerlink" href="#le-for" title="Permanent link">&para;</a></h2>
+<pre><code class="language-php">    @for ($i = 0; $i &lt; 10; $i++)
+    The current value is {{ $i }}
+    @endfor
+</code></pre>
+<h2 id="le-while">Le while<a class="headerlink" href="#le-while" title="Permanent link">&para;</a></h2>
+<pre><code class="language-php">    @while (true)
+    &lt;p&gt;I'm looping forever.&lt;/p&gt;
+    @endwhile
+</code></pre></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/php.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/bash.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

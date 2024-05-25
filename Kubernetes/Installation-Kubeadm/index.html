@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://minzord.fr/Kubernetes/Installation-Kubeadm/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Installer un cluster Kubernetes - Minzord</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Minzord</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Système <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../UNIX/">Linux / BSD</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Windows/">Windows</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseau <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Cisco/">Cisco</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Développement <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">PHP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../Laravel/">Laravel</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../Symfony/">Symfony</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../CSharp/">C#</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Javascript/">Javascript</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../GIT/">Git</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../">Kubernetes</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/Kubernetes/Installation-Kubeadm.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#installation-de-kubernetes">Installation de Kubernetes</a></li>
+        <li class="first-level "><a href="#installation-de-containerd">Installation de Containerd</a></li>
+        <li class="first-level "><a href="#ininitialisation-du-control-plane">Ininitialisation du Control Plane</a></li>
+        <li class="first-level "><a href="#gestion-du-reseau-avec-flannel">Gestion du reseau avec flannel</a></li>
+        <li class="first-level "><a href="#mettre-en-place-lautocompletion">Mettre en place l'autocompletion</a></li>
+        <li class="first-level "><a href="#integrer-un-noeud-au-cluster">Integrer un noeud au cluster</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="installation-de-kubernetes">Installation de Kubernetes<a class="headerlink" href="#installation-de-kubernetes" title="Permanent link">&para;</a></h1>
+<pre><code class="language-bash">    sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</code></pre>
+<pre><code>  sudo apt-get update
+  sudo apt-get install -y kubelet kubeadm kubectl
+  sudo apt-mark hold kubelet kubeadm kubectl
+</code></pre>
+<pre><code>  sudo tee /etc/modules-load.d/k8s.conf &lt;&lt;EOF
+  overlay
+  br_netfilter
+  EOF
+</code></pre>
+<pre><code>  sudo modprobe overlay
+  sudo modprobe br_netfilter
+</code></pre>
+<pre><code>  sudo tee /etc/sysctl.d/kubernetes.conf&lt;&lt;EOF
+  net.bridge.bridge-nf-call-ip6tables = 1
+  net.bridge.bridge-nf-call-iptables = 1
+  net.ipv4.ip_forward = 1
+  EOF
+</code></pre>
+<pre><code>sudo sysctl --system
+</code></pre>
+<h1 id="installation-de-containerd">Installation de Containerd<a class="headerlink" href="#installation-de-containerd" title="Permanent link">&para;</a></h1>
+<pre><code>  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  echo \
+    &quot;deb [arch=&quot;$(dpkg --print-architecture)&quot; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+    &quot;$(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;)&quot; stable&quot; | \
+    sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+  sudo apt-get update
+  sudo apt install -y containerd.io
+</code></pre>
+<pre><code>  sudo mkdir -p /etc/containerd
+  containerd config default | sudo tee /etc/containerd/config.toml
+  sudo systemctl restart containerd
+  sudo systemctl enable containerd
+</code></pre>
+<h1 id="ininitialisation-du-control-plane">Ininitialisation du Control Plane<a class="headerlink" href="#ininitialisation-du-control-plane" title="Permanent link">&para;</a></h1>
+<pre><code class="language-bash">  kubeadm init \
+    --pod-network-cidr=192.168.89.0/16
+</code></pre>
+<p>192.168.89.0 sera le réseau local des conteneurs.</p>
+<h1 id="gestion-du-reseau-avec-flannel">Gestion du reseau avec flannel<a class="headerlink" href="#gestion-du-reseau-avec-flannel" title="Permanent link">&para;</a></h1>
+<pre><code class="language-bash">  wget https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+  vi kube-flannel.yml
+</code></pre>
+<p>Et modifier le champ Network pour indiquer le réseau local dans notre exemple: 192.168.89.0/16</p>
+<pre><code class="language-bash">  kubectl apply -f kube-flannel.yml
+</code></pre>
+<h1 id="mettre-en-place-lautocompletion">Mettre en place l'autocompletion<a class="headerlink" href="#mettre-en-place-lautocompletion" title="Permanent link">&para;</a></h1>
+<pre><code>    apt install bash-completion
+    echo &quot;source &lt;(kubectl completion bash)&quot; &gt;&gt; ~/.bashrc
+    source ~/.bashrc
+</code></pre>
+<h1 id="integrer-un-noeud-au-cluster">Integrer un noeud au cluster<a class="headerlink" href="#integrer-un-noeud-au-cluster" title="Permanent link">&para;</a></h1>
+<pre><code class="language-bash">  kubeadm join 10.0.2.100:6443 --token hpr49r.v40bgx8z06gk4itf --discovery-token-ca-cert-hash sha256:f95f3c004c9757265e395b68654c66ce9cbba22eb2129ebde2f2b0c29107f41a
+</code></pre>
+<p>Les paramètres pour rejoindre le Control Plane a été donné au moment de l'initialisation du Control Plane.</p>
+<p>Sources: <a href="https://computingforgeeks.com/install-kubernetes-cluster-on-debian-12-bookworm">computingforgeeks</a></p></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/php.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/bash.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

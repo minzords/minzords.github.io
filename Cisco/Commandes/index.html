@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://minzord.fr/Cisco/Commandes/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Commandes utiles pour Cisco - Minzord</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Minzord</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Système <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../UNIX/">Linux / BSD</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Windows/">Windows</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseau <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../">Cisco</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Développement <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">PHP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../Laravel/">Laravel</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../Symfony/">Symfony</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../CSharp/">C#</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Javascript/">Javascript</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../GIT/">Git</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Kubernetes/">Kubernetes</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/Cisco/Commandes.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#commandes-utiles-pour-cisco">Commandes utiles pour Cisco</a></li>
+            <li class="second-level"><a href="#reset">RESET</a></li>
+                
+            <li class="second-level"><a href="#mettre-une-banniere">Mettre une bannière</a></li>
+                
+            <li class="second-level"><a href="#changer-le-hostname">Changer le Hostname</a></li>
+                
+            <li class="second-level"><a href="#creer-un-utilisateur">Créer un utilisateur</a></li>
+                
+            <li class="second-level"><a href="#mettre-un-mots-de-passe">Mettre un mots de passe</a></li>
+                
+            <li class="second-level"><a href="#configurer-un-utilisateur-et-un-mot-de-passe-pour-la-console">Configurer un utilisateur et un mot de passe pour la console</a></li>
+                
+            <li class="second-level"><a href="#configurer-un-utilisateur-et-un-mot-de-passe-pour-telnet">Configurer un utilisateur et un mot de passe pour Telnet</a></li>
+                
+            <li class="second-level"><a href="#configurer-un-domaine">Configurer un domaine</a></li>
+                
+            <li class="second-level"><a href="#ssh">SSH</a></li>
+                
+                <li class="third-level"><a href="#creation-de-cle-rsa-ssh">Creation de clé RSA SSH</a></li>
+                <li class="third-level"><a href="#activer-ssh">Activer SSH</a></li>
+                <li class="third-level"><a href="#config-ssh">Config SSH</a></li>
+            <li class="second-level"><a href="#ajout-dun-compte-root">Ajout d'un compte Root</a></li>
+                
+            <li class="second-level"><a href="#desactiver-telnet">Désactiver Telnet</a></li>
+                
+            <li class="second-level"><a href="#chiffrement-de-ses-mots-de-passe">Chiffrement de ses mots de passe</a></li>
+                
+            <li class="second-level"><a href="#chiffrement-de-ses-mots-de-passe-en-vigenere">Chiffrement de ses mots de passe en vigenère</a></li>
+                
+            <li class="second-level"><a href="#afficher-la-version">Afficher la version</a></li>
+                
+            <li class="second-level"><a href="#routage-statique">Routage Statique</a></li>
+                
+            <li class="second-level"><a href="#voir-la-liste-de-routage">Voir la liste de routage</a></li>
+                
+            <li class="second-level"><a href="#sauvegardez-la-configuration">Sauvegardez la configuration</a></li>
+                
+            <li class="second-level"><a href="#sauvegardez-sur-un-serveur-tftp">Sauvegardez sur un serveur TFTP</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="commandes-utiles-pour-cisco">Commandes utiles pour Cisco<a class="headerlink" href="#commandes-utiles-pour-cisco" title="Permanent link">&para;</a></h1>
+<h2 id="reset">RESET<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h2>
+<pre><code>Switch# erase nvram:
+Switch# delete flash:vlan.dat
+Switch# delete flash:config.text
+Switch# reload
+</code></pre>
+<h2 id="mettre-une-banniere">Mettre une bannière<a class="headerlink" href="#mettre-une-banniere" title="Permanent link">&para;</a></h2>
+<p><code>switch(config)#banner motd !ACCES RESERVE !</code></p>
+<h2 id="changer-le-hostname">Changer le Hostname<a class="headerlink" href="#changer-le-hostname" title="Permanent link">&para;</a></h2>
+<p><code>hostname switch_Minz</code></p>
+<h2 id="creer-un-utilisateur">Créer un utilisateur<a class="headerlink" href="#creer-un-utilisateur" title="Permanent link">&para;</a></h2>
+<p><code>switch(config)#username admin privilege 15 secret Mdpsecu</code></p>
+<h2 id="mettre-un-mots-de-passe">Mettre un mots de passe<a class="headerlink" href="#mettre-un-mots-de-passe" title="Permanent link">&para;</a></h2>
+<p><code>enable password Mdpsecu</code></p>
+<h2 id="configurer-un-utilisateur-et-un-mot-de-passe-pour-la-console">Configurer un utilisateur et un mot de passe pour la console<a class="headerlink" href="#configurer-un-utilisateur-et-un-mot-de-passe-pour-la-console" title="Permanent link">&para;</a></h2>
+<pre><code>switch(config)#line con 0
+switch(config-line)# speed 9600
+switch(config-line)#password Mdpsecu
+switch(config-line)#login local
+</code></pre>
+<h2 id="configurer-un-utilisateur-et-un-mot-de-passe-pour-telnet">Configurer un utilisateur et un mot de passe pour Telnet<a class="headerlink" href="#configurer-un-utilisateur-et-un-mot-de-passe-pour-telnet" title="Permanent link">&para;</a></h2>
+<pre><code>switch(config)#line vty 0 15
+switch(config-line)#
+switch(config-line)# password Mdpsecu
+switch(config-line)#login local
+</code></pre>
+<h2 id="configurer-un-domaine">Configurer un domaine<a class="headerlink" href="#configurer-un-domaine" title="Permanent link">&para;</a></h2>
+<p><code>Switch(config)#ip domain-name minz.local</code></p>
+<h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h3 id="creation-de-cle-rsa-ssh">Creation de clé RSA SSH<a class="headerlink" href="#creation-de-cle-rsa-ssh" title="Permanent link">&para;</a></h3>
+<p><code>crypto key generate rsa general-keys modulus 1024</code></p>
+<h3 id="activer-ssh">Activer SSH<a class="headerlink" href="#activer-ssh" title="Permanent link">&para;</a></h3>
+<p><code>ip ssh version 2</code></p>
+<h3 id="config-ssh">Config SSH<a class="headerlink" href="#config-ssh" title="Permanent link">&para;</a></h3>
+<pre><code>Switch(config)#ip ssh time-out 60
+Switch(config)#ip ssh authentication-retries 3 
+</code></pre>
+<h2 id="ajout-dun-compte-root">Ajout d'un compte Root<a class="headerlink" href="#ajout-dun-compte-root" title="Permanent link">&para;</a></h2>
+<pre><code>Switch(config)#aaa new-model
+Switch(config)#aaa authentication login default local
+</code></pre>
+<h2 id="desactiver-telnet">Désactiver Telnet<a class="headerlink" href="#desactiver-telnet" title="Permanent link">&para;</a></h2>
+<pre><code>Switch(config)#line vty 0 2
+Switch(config-line)#access-class SSH_ACCESS in 
+Switch(config-line)#login local
+Switch(config-line)#transport input ssh
+Switch(config-line)#transport output ssh
+Switch(config)#line vty 3 15 
+</code></pre>
+<h2 id="chiffrement-de-ses-mots-de-passe">Chiffrement de ses mots de passe<a class="headerlink" href="#chiffrement-de-ses-mots-de-passe" title="Permanent link">&para;</a></h2>
+<pre><code>switch(config)# service password-encryption
+</code></pre>
+<h2 id="chiffrement-de-ses-mots-de-passe-en-vigenere">Chiffrement de ses mots de passe en vigenère<a class="headerlink" href="#chiffrement-de-ses-mots-de-passe-en-vigenere" title="Permanent link">&para;</a></h2>
+<pre><code>Switch(config)# no enable password 
+Switch(config)#enable secret Mdpsecu
+</code></pre>
+<h2 id="afficher-la-version">Afficher la version<a class="headerlink" href="#afficher-la-version" title="Permanent link">&para;</a></h2>
+<pre><code>Router# show version
+</code></pre>
+<h2 id="routage-statique">Routage Statique<a class="headerlink" href="#routage-statique" title="Permanent link">&para;</a></h2>
+<p><code>Router (config)# ip route 172.18.0.0 255.255.0.0 172.17.3.254</code></p>
+<p><strong>172.18.0.0</strong> : le réseau, <strong>172.17.3.254</strong> la passerelle</p>
+<h2 id="voir-la-liste-de-routage">Voir la liste de routage<a class="headerlink" href="#voir-la-liste-de-routage" title="Permanent link">&para;</a></h2>
+<p><code>Router# show ip route</code></p>
+<h2 id="sauvegardez-la-configuration">Sauvegardez la configuration<a class="headerlink" href="#sauvegardez-la-configuration" title="Permanent link">&para;</a></h2>
+<pre><code>Switch#copy running-config startup-config 
+Switch#reload
+</code></pre>
+<h2 id="sauvegardez-sur-un-serveur-tftp">Sauvegardez sur un serveur TFTP<a class="headerlink" href="#sauvegardez-sur-un-serveur-tftp" title="Permanent link">&para;</a></h2>
+<p><code>copy tftp: running-config</code></p></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/php.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/bash.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

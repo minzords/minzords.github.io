@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://minzord.fr/Windows/Reseau/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Commandes Réseau - Minzord</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Minzord</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Système <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../UNIX/">Linux / BSD</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../">Windows</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseau <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Cisco/">Cisco</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Développement <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">PHP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../Laravel/">Laravel</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../Symfony/">Symfony</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../CSharp/">C#</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../Javascript/">Javascript</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../GIT/">Git</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../Kubernetes/">Kubernetes</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/Windows/Reseau.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#afficher-la-configuration-complete-des-cartes-reseau">Afficher la configuration complète des cartes réseau</a></li>
+        <li class="first-level "><a href="#liberer-lip">Libérer l'IP</a></li>
+        <li class="first-level "><a href="#renouveler-ladresse-ip">Renouveler l'adresse IP</a></li>
+        <li class="first-level "><a href="#afficher-le-cache-dns">Afficher le cache DNS</a></li>
+        <li class="first-level "><a href="#vider-le-cache-dns">Vider le cache DNS</a></li>
+        <li class="first-level "><a href="#afficher-les-adresses-mac">Afficher les adresses mac</a></li>
+        <li class="first-level "><a href="#afficher-la-configuration-reseau">Afficher la configuration réseau</a></li>
+        <li class="first-level "><a href="#config-lip-en-dhcp">Config l'IP en DHCP</a></li>
+        <li class="first-level "><a href="#config-lip-en-manuel">Config l'IP en manuel</a></li>
+            <li class="second-level"><a href="#ipv4">IPv4</a></li>
+                
+            <li class="second-level"><a href="#ipv6">IPv6</a></li>
+                
+        <li class="first-level "><a href="#config-dns">Config DNS</a></li>
+            <li class="second-level"><a href="#dns-primaire">DNS Primaire</a></li>
+                
+                <li class="third-level"><a href="#ipv4_1">IPv4</a></li>
+                <li class="third-level"><a href="#ipv6_1">IPv6</a></li>
+            <li class="second-level"><a href="#dns-secondaire">DNS Secondaire</a></li>
+                
+                <li class="third-level"><a href="#ipv6_2">IPv6</a></li>
+        <li class="first-level "><a href="#avoir-lip-et-ladresse-mac-arp">Avoir l'ip et l'adresse MAC (ARP)</a></li>
+        <li class="first-level "><a href="#tester-le-dns">Tester le DNS</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="afficher-la-configuration-complete-des-cartes-reseau">Afficher la configuration complète des cartes réseau<a class="headerlink" href="#afficher-la-configuration-complete-des-cartes-reseau" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ipconfig /all</p>
+</blockquote>
+<h1 id="liberer-lip">Libérer l'IP<a class="headerlink" href="#liberer-lip" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ipconfig /release</p>
+</blockquote>
+<h1 id="renouveler-ladresse-ip">Renouveler l'adresse IP<a class="headerlink" href="#renouveler-ladresse-ip" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ipconfig /renew</p>
+</blockquote>
+<h1 id="afficher-le-cache-dns">Afficher le cache DNS<a class="headerlink" href="#afficher-le-cache-dns" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ipconfig /displaydns</p>
+</blockquote>
+<h1 id="vider-le-cache-dns">Vider le cache DNS<a class="headerlink" href="#vider-le-cache-dns" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>ipconfig /flushdns</p>
+</blockquote>
+<h1 id="afficher-les-adresses-mac">Afficher les adresses mac<a class="headerlink" href="#afficher-les-adresses-mac" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>getmac /v</p>
+</blockquote>
+<h1 id="afficher-la-configuration-reseau">Afficher la configuration réseau<a class="headerlink" href="#afficher-la-configuration-reseau" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>netsh interface show interface</p>
+</blockquote>
+<h1 id="config-lip-en-dhcp">Config l'IP en DHCP<a class="headerlink" href="#config-lip-en-dhcp" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>netsh interface ip set address "Connexion au réseau local" dhcp</p>
+</blockquote>
+<h1 id="config-lip-en-manuel">Config l'IP en manuel<a class="headerlink" href="#config-lip-en-manuel" title="Permanent link">&para;</a></h1>
+<h2 id="ipv4">IPv4<a class="headerlink" href="#ipv4" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>netsh interface ip set address "Connexion au réseau local" static 10.1.2.220/24 10.1.2.254</p>
+</blockquote>
+<h2 id="ipv6">IPv6<a class="headerlink" href="#ipv6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>netsh interface ipv6 add address "Connexion au réseau local" 2001:db8:290c:1291::1</p>
+</blockquote>
+<h1 id="config-dns">Config DNS<a class="headerlink" href="#config-dns" title="Permanent link">&para;</a></h1>
+<h2 id="dns-primaire">DNS Primaire<a class="headerlink" href="#dns-primaire" title="Permanent link">&para;</a></h2>
+<h3 id="ipv4_1">IPv4<a class="headerlink" href="#ipv4_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>netsh interface ip set dns name="Connexion au réseau local" static 207.164.234.129</p>
+</blockquote>
+<h3 id="ipv6_1">IPv6<a class="headerlink" href="#ipv6_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>netsh interface ip set dns name="Connexion au réseau local" static 2620:10A:80BB::10</p>
+</blockquote>
+<h2 id="dns-secondaire">DNS Secondaire<a class="headerlink" href="#dns-secondaire" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>netsh interface ip add dns name="Connexion au réseau local" 149.112.121.10 index=2</p>
+</blockquote>
+<h3 id="ipv6_2">IPv6<a class="headerlink" href="#ipv6_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>netsh interface ip set dns name="Connexion au réseau local" static 2620:10A:80BC::10 index=2</p>
+</blockquote>
+<h1 id="avoir-lip-et-ladresse-mac-arp">Avoir l'ip et l'adresse MAC (ARP)<a class="headerlink" href="#avoir-lip-et-ladresse-mac-arp" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>arp -a</p>
+</blockquote>
+<h1 id="tester-le-dns">Tester le DNS<a class="headerlink" href="#tester-le-dns" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>nslookup videotron.com</p>
+</blockquote></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/yaml.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/php.min.js"></script>
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/bash.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
