@@ -1,6 +1,6 @@
 site_name: Minzord
 site_url: https://minzord.fr
-repo_url: https://github.com/minzords/Wiki
+repo_url: https://github.com/minzords/minzords.github.io
 theme:
   name: cinder
   highlightjs: true
