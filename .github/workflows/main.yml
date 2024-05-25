@@ -22,6 +22,7 @@ jobs:
         with:
           python-version: 3.9
       - run: pip install \
+            mkdocs \
             mkdocs-cinder
       - run: mkdocs gh-deploy --config-file mkdocs.yml --force
  
