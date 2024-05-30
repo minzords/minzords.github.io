@@ -186,6 +186,8 @@
         <li class="first-level active"><a href="#configuration-des-depots-de-mandriva-pour-mettre-a-jour-le-systeme-et-pouvoir-installer-des-logiciels">Configuration des dépots de Mandriva pour mettre à jour le système et pouvoir installer des logiciels</a></li>
             <li class="second-level"><a href="#remplacer-les-depots-de-mandriva">Remplacer les dépots de Mandriva</a></li>
                 
+            <li class="second-level"><a href="#activation-des-depots-testing-optionnel">Activation des dépots testing (optionnel)</a></li>
+                
             <li class="second-level"><a href="#mettre-a-jour-le-systeme">Mettre à jour le système</a></li>
                 
     </ul>
@@ -198,6 +200,11 @@
 export ARCH=`uname -m`
 export VERSION=`cat /etc/mandriva-release | cut -d' ' -f4 | cut -d'.' -f1`
 urpmi.addmedia --distrib http://distrib-coffee.ipsl.jussieu.fr/pub/linux/MandrivaLinux/official/$VERSION/$ARCH/
+</code></pre>
+<h2 id="activation-des-depots-testing-optionnel">Activation des dépots testing (optionnel)<a class="headerlink" href="#activation-des-depots-testing-optionnel" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">urpmi.update --no-ignore &quot;Main Testing&quot;
+urpmi.update --no-ignore &quot;Contrib Testing&quot;
+urpmi.update --no-ignore &quot;Non-free Testing&quot;
 </code></pre>
 <h2 id="mettre-a-jour-le-systeme">Mettre à jour le système<a class="headerlink" href="#mettre-a-jour-le-systeme" title="Permanent link">&para;</a></h2>
 <pre><code class="language-bash">urpmi --replacefiles --auto-update --auto
