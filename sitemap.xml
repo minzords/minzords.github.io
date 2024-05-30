@@ -2,332 +2,337 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://minzord.fr/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/CSharp/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/GIT/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Javascript/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Kubernetes/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Symfony/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Windows/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/CSharp/Configuration-VSCODE/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/CSharp/Installation-MAUI-Linux/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/ACL/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/BGP/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/Commandes/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/EIGRP/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/IPv6/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/LACP/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/NAT/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/Reset-Switch/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/Routage-InterVLAN/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/VLAN/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Cisco/VTP/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/GIT/Fork-Ancien-Commit/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/JavaScript/Memo/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Kubernetes/Installation-Kubeadm/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Kubernetes/Installation-Minikube/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Kubernetes/Notes/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/11/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Blade/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Controller/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Database/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Introduction-ORM-Eloquent/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Les-Factories/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Les-Migrations/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Many-To-Many/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/One-To-Many/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/One-To-One/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Traitement-Formulaire/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Upload/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/Vue/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/creer-un-projet/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/middlewares/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Laravel/routing/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Mikrotik/commandes/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Symfony/Twig/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Asterisk-Route-InterContexte/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Changer-le-Subnet-Docker/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Cle-SSH/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Cluster-Asterisk/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Cluster-HA-Corosync/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Creer-Depot-RPM/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/DNS-BIND-DNSSEC/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/DNS-BIND/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/DNS-CAA-Lets-Encrypt/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Debian-OpenRC/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/HA-MySQL/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/HTTPS/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/IPFailover-Corosync/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/Interface-Virtuel/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/LEMP/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/RIP-Bird/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://minzord.fr/UNIX/configuration-des-depots-de-mandriva/</loc>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/installation-portainerio/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/UNIX/mises-a-jours-avec-ansible/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Windows/RADIUS/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minzord.fr/Windows/Reseau/</loc>
-         <lastmod>2024-05-25</lastmod>
+         <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

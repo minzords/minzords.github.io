@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <link rel="canonical" href="https://minzord.fr/UNIX/">
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="canonical" href="https://minzord.fr/UNIX/configuration-des-depots-de-mandriva/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Linux / BSD - Minzord</title>
+    <title>Configuration des dépots de Mandriva pour mettre à jour le système et pouvoir installer des logiciels - Minzord</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
     <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="../css/base.min.css" rel="stylesheet">
-    <link href="../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
 
     
         
@@ -59,7 +59,7 @@
             <!-- Main title -->
 
             
-              <a class="navbar-brand" href="..">Minzord</a>
+              <a class="navbar-brand" href="../..">Minzord</a>
             
         </div>
 
@@ -69,19 +69,19 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Système <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">Linux / BSD</a>
+<li >
+    <a href="../">Linux / BSD</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Windows/">Windows</a>
+    <a href="../../Windows/">Windows</a>
 </li>
 
                         
@@ -96,7 +96,7 @@
                         
                             
 <li >
-    <a href="../Cisco/">Cisco</a>
+    <a href="../../Cisco/">Cisco</a>
 </li>
 
                         
@@ -116,13 +116,13 @@
         
             
 <li >
-    <a href="../Laravel/">Laravel</a>
+    <a href="../../Laravel/">Laravel</a>
 </li>
 
         
             
 <li >
-    <a href="../Symfony/">Symfony</a>
+    <a href="../../Symfony/">Symfony</a>
 </li>
 
         
@@ -132,19 +132,19 @@
                         
                             
 <li >
-    <a href="../CSharp/">C#</a>
+    <a href="../../CSharp/">C#</a>
 </li>
 
                         
                             
 <li >
-    <a href="../Javascript/">Javascript</a>
+    <a href="../../Javascript/">Javascript</a>
 </li>
 
                         
                             
 <li >
-    <a href="../GIT/">Git</a>
+    <a href="../../GIT/">Git</a>
 </li>
 
                         
@@ -159,7 +159,7 @@
                         
                             
 <li >
-    <a href="../Kubernetes/">Kubernetes</a>
+    <a href="../../Kubernetes/">Kubernetes</a>
 </li>
 
                         
@@ -170,18 +170,8 @@
                 </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                    <li class="disabled">
-                        <a rel="prev" >
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="next" href="../Windows/">
-                            Next <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li>
                     <li>
-                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/UNIX.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/minzords/minzords.github.io/edit/master/docs/UNIX/configuration-des-depots-de-mandriva.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -193,77 +183,32 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#ansible">Ansible</a></li>
-        <li class="first-level "><a href="#dns">DNS</a></li>
-        <li class="first-level "><a href="#docker">Docker</a></li>
-        <li class="first-level "><a href="#haute-disponibilite">Haute Disponibilité</a></li>
-        <li class="first-level "><a href="#https">HTTPS</a></li>
-        <li class="first-level "><a href="#routage">Routage</a></li>
-        <li class="first-level "><a href="#voip">VOIP</a></li>
-        <li class="first-level "><a href="#rhel-redhat">RHEL (Redhat)</a></li>
-        <li class="first-level "><a href="#mandriva">Mandriva</a></li>
-        <li class="first-level "><a href="#divers-essais">Divers essais</a></li>
+        <li class="first-level active"><a href="#configuration-des-depots-de-mandriva-pour-mettre-a-jour-le-systeme-et-pouvoir-installer-des-logiciels">Configuration des dépots de Mandriva pour mettre à jour le système et pouvoir installer des logiciels</a></li>
+            <li class="second-level"><a href="#remplacer-les-depots-de-mandriva">Remplacer les dépots de Mandriva</a></li>
+                
+            <li class="second-level"><a href="#mettre-a-jour-le-systeme">Mettre à jour le système</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<ul>
-<li><a href="LEMP/">Installation d'un serveur LEMP</a></li>
-<li><a href="Cle-SSH/">Creation et mises en place d'une clé SSH</a></li>
-<li><a href="DNS-CAA-Lets-Encrypt/">Activer le DNS CAA avec Let's Encrypt</a></li>
-</ul>
-<h1 id="ansible">Ansible<a class="headerlink" href="#ansible" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="mises-a-jours-avec-ansible/">Mises à jours avec Ansible</a></li>
-</ul>
-<h1 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="DNS-BIND/">Mises en place d'un DNS avec Bind</a></li>
-<li><a href="DNS-BIND-DNSSEC/">Mises en place de DNSSEC sur Bind</a></li>
-</ul>
-<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="installation-portainerio/">Installation de Portainer.io</a></li>
-<li><a href="Changer-le-Subnet-Docker/">Changement du Subnet par défaut de Docker</a></li>
-</ul>
-<h1 id="haute-disponibilite">Haute Disponibilité<a class="headerlink" href="#haute-disponibilite" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="Cluster-HA-Corosync/">Créer un cluster HA avec corosync</a></li>
-<li><a href="IPFailover-Corosync/">Créer une IPFailover sur Corosync</a></li>
-<li><a href="HA-MySQL/">Redondance sur MySQL</a></li>
-</ul>
-<h1 id="https">HTTPS<a class="headerlink" href="#https" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="HTTPS/">Création de l'Autorité de certification + HTTPS</a></li>
-</ul>
-<h1 id="routage">Routage<a class="headerlink" href="#routage" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="RIP-Bird/">RIP sur Bird</a></li>
-</ul>
-<h1 id="voip">VOIP<a class="headerlink" href="#voip" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="Cluster-Asterisk/">Cluster Asterisk</a></li>
-<li><a href="Asterisk-Route-InterContexte/">Mises en place d'un routage InterContexte</a></li>
-</ul>
-<h1 id="rhel-redhat">RHEL (Redhat)<a class="headerlink" href="#rhel-redhat" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="Creer-Depot-RPM/">Créer un dépôt RPM</a></li>
-</ul>
-<h1 id="mandriva">Mandriva<a class="headerlink" href="#mandriva" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="configuration-des-depots-de-mandriva/">Configuration des dépots</a></li>
-</ul>
-<h1 id="divers-essais">Divers essais<a class="headerlink" href="#divers-essais" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="Debian-OpenRC/">Changer l'Init de Debian pour OpenRC</a></li>
-</ul></div>
+<h1 id="configuration-des-depots-de-mandriva-pour-mettre-a-jour-le-systeme-et-pouvoir-installer-des-logiciels">Configuration des dépots de Mandriva pour mettre à jour le système et pouvoir installer des logiciels<a class="headerlink" href="#configuration-des-depots-de-mandriva-pour-mettre-a-jour-le-systeme-et-pouvoir-installer-des-logiciels" title="Permanent link">&para;</a></h1>
+<h2 id="remplacer-les-depots-de-mandriva">Remplacer les dépots de Mandriva<a class="headerlink" href="#remplacer-les-depots-de-mandriva" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">urpmi.removemedia -a
+export ARCH=`uname -m`
+export VERSION=`cat /etc/mandriva-release | cut -d' ' -f4 | cut -d'.' -f1`
+urpmi.addmedia --distrib http://distrib-coffee.ipsl.jussieu.fr/pub/linux/MandrivaLinux/official/$VERSION/$ARCH/
+</code></pre>
+<h2 id="mettre-a-jour-le-systeme">Mettre à jour le système<a class="headerlink" href="#mettre-a-jour-le-systeme" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">urpmi --replacefiles --auto-update --auto
+</code></pre></div>
         
         
     </div>
 
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
 
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
@@ -275,10 +220,10 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 
-    <script>var base_url = ".."</script>
+    <script>var base_url = "../.."</script>
     
-    <script src="../js/base.js"></script>
-    <script src="../search/main.js"></script>
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
