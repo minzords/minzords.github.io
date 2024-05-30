@@ -31,5 +31,8 @@
 # RHEL (Redhat)
 - [Créer un dépôt RPM](UNIX/Creer-Depot-RPM.md)
 
+# Mandriva
+- [Configuration des dépots](UNIX/configuration-des-depots-de-mandriva.md)
+
 # Divers essais
 - [Changer l'Init de Debian pour OpenRC](UNIX/Debian-OpenRC.md)
