@@ -11,21 +11,21 @@ dateCreated: 2023-07-20T15:02:31.386Z
 # Afficher une variable
 Dans cet exemple, je vais afficher la variable ave.
 ```twig
-	{{ ave }}
+{{ ave }}
 ```
 
 # Les boucles
 ## FOR
 ```twig
-	{% for user in users %}
+{% for user in users %}
         <li>{{ user.username }}</li>
-  {% endfor %}
+ {% endfor %}
 ```
 
 # Les Conditions
 ## IF
 ```twig
-	{% if variable == truc) %}
+{% if variable == truc) %}
     <p>La valeur de variable est truc.</p>
-	{% endif %}
+{% endif %}
 ```
