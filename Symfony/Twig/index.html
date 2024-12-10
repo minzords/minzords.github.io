@@ -196,19 +196,19 @@
 
 <h1 id="afficher-une-variable">Afficher une variable<a class="headerlink" href="#afficher-une-variable" title="Permanent link">&para;</a></h1>
 <p>Dans cet exemple, je vais afficher la variable ave.</p>
-<pre><code class="language-twig">    {{ ave }}
+<pre><code class="language-twig">{{ ave }}
 </code></pre>
 <h1 id="les-boucles">Les boucles<a class="headerlink" href="#les-boucles" title="Permanent link">&para;</a></h1>
 <h2 id="for">FOR<a class="headerlink" href="#for" title="Permanent link">&para;</a></h2>
-<pre><code class="language-twig">    {% for user in users %}
+<pre><code class="language-twig">{% for user in users %}
         &lt;li&gt;{{ user.username }}&lt;/li&gt;
-  {% endfor %}
+ {% endfor %}
 </code></pre>
 <h1 id="les-conditions">Les Conditions<a class="headerlink" href="#les-conditions" title="Permanent link">&para;</a></h1>
 <h2 id="if">IF<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
-<pre><code class="language-twig">    {% if variable == truc) %}
+<pre><code class="language-twig">{% if variable == truc) %}
     &lt;p&gt;La valeur de variable est truc.&lt;/p&gt;
-    {% endif %}
+{% endif %}
 </code></pre></div>
         
         
